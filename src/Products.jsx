@@ -49,10 +49,10 @@ export default function Products({addToCart}) {
                                     <h5 className='card-title text-light mt-2'>{Products.product_title}</h5>
                                     <h6 className='card-text  text-danger mt-3'>₹{Products.product_price}</h6>
                                     <div className="prow2 row mt-3">
-                                        <div className="col-sm-6">
-                                            <button className='btn btn-warning text-light mt-2' onClick={()=>addToCart(Products)}>Add to cart</button>
+                                        <div className="col-6">
+                                            <button className='btn btn-warning text-light mt-2 ' onClick={()=>addToCart(Products)}>Add to cart</button>
                                         </div>
-                                        <div className="col-sm-6">
+                                        <div className="col-6">
                                             <Link to={"/showp/"+param.name+"/"+Products.id} className="btn btn-info mt-2" >Details</Link>
                                         </div>
                                     </div>

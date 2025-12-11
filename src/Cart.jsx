@@ -38,7 +38,7 @@ export default function Cart({ cartData, setCart }) {
     <div className='cart  container-fluid'>
       <div className="row"></div>
       {
-        cartData.length == 0 ? <><div className='ecart'><div className="row"></div> <div className='row mt-5 '><h1 className='eh1 text-center  text-light'>Cart is empty</h1></div></div></> :
+        cartData.length == 0 ? <><div className='ecart'><div className="row"></div> <div className="row mt-5"></div> <div className="row mt-5"></div> <div className="row mt-5"></div> <div className="row mt-5"></div> <div className="row mt-5"></div> <div className="row mt-5"></div> <div className='row mt-5 '><h1 className='eh1 text-center  text-light'>Cart is empty</h1></div></div></> :
           <div className="table-responsive">
             <table className='tab table table-bordered text-center table-dark'>
               <thead>
