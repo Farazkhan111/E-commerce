@@ -104,10 +104,10 @@ export default function Showp({addToCart}) {
                     <div className="col-sm-4"></div>
                   </div>
                   <div className="row mt-5">
-                    <div className="dbox3 col-sm-6">
+                    <div className="dbox3 col-6">
                       <button className='btn btn-warning text-light btn-lg ' onClick={()=>addToCart(Product)}>Add to Cart</button>
                     </div>
-                    <div className='dbox4 col-sm-6'>
+                    <div className='dbox4 col-6'>
                       <button className='btn btn-info text-light btn-lg'>Buy Now</button>
                     </div>
                   </div>
