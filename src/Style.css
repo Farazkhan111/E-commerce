@@ -490,3 +490,40 @@ a{
     width: 50%; */
     margin-top: 80px;
 }
+
+.llimg{
+    transition: 2s;
+    transform: scale(0.9);
+    animation: myani 10s infinite ease-in-out;
+}
+
+@keyframes myani{
+    0%{
+        transform: scale(0.8);
+        rotate: calc(0deg);
+    }
+  
+    50%{
+        transform: scale(1);
+         /* rotate: calc(180deg); */
+    }
+    50%{
+        transform: scale(1);
+        /* rotate: calc(270deg); */
+    }
+  
+    100%{
+        transform: scale(0.8);
+         rotate: calc(360deg);
+    }
+
+}
+
+.llimg:hover{
+    transform: scale(1);
+}
+.nlogo{
+    font-size: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 3px;
+}

@@ -17,8 +17,8 @@ export default function Navbar({ len }) {
                                 : "rgba(57,57,57,0.797)"
                     }}
                 >
-                 {/* <span id='llimg'></span> */}
-                 <Link to={'/'} className='navbar-brand text-light'><img src={logo} alt="" width={"30px"} className='me-3' />Faraz</Link>
+                 {/* <span '></span> */}
+                 <Link to={'/'} className='navbar-brand text-light'><img src={logo} alt=""  width={"40px"}  className='llimg me-3' /><span className='nlogo'>ΓΛRΛZ</span></Link>
 
                     {/* TOGGLER */}
                     <button
