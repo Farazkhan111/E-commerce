@@ -490,25 +490,3 @@ a{
     width: 50%; */
     margin-top: 80px;
 }
-#llimg{
-    height: 40px;
-    background-image: url("./Logo/Gemini_Generated_Image_2laa422laa422laa.png");
-    background-size: contain;
-    width: 40px;
-    border: none !important;
-    transition: 1s;
-    transform: scale(0.8);
-    background-color: black;
-    animation: myani;
-    animation-duration: 2s;
-    animation-delay: inherit;
-    animation-fill-mode: forwards;
-    animation-direction: normal;
-}
-@keyframes myani{
-    
-}
-#llimg:hover{
-    transform: scale(1);
-    transform:rotate(45) !important;
-}
