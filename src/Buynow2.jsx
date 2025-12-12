@@ -1,19 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import './Style2.css'
-import { Navigate, useNavigate } from 'react-router-dom';
-export default function Buynow({ cartData , setCart}) {
-
-  const [atot, setTot] = useState(0);
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import JeanJson from './jsonData/JeanJson'
+import ShirtData from './jsonData/ShirtJson'
+import ShoeJson from './jsonData/ShoeJson'
+import TshirtJson from './jsonData/TshirtJson'
+import Sub from './Sub'
+export default function Buynow2() {
+    const param=useParams();
+    const [data, setData] = useState([]);
+    const [qun , setQun] = useState()
+    const [price , setPri]= useState();
+   
   var navv = useNavigate();
   useEffect(() => {
-    var tot = 0;
-    cartData.forEach((tcart) => {
-      tot += (tcart.product_price * tcart.product_quantity);
+     if (param.name == "shirts") {
+      // console.log(ShirtData);
+      setData(ShirtData);
+    }
+    else if (param.name == "t-shirts") {
+      // console.log(TshirtJson);
+      setData(TshirtJson);
+
+    }
+    else if (param.name == "jeans") {
+      // console.log(JeanJson);
+      setData(JeanJson);
+
+    }
+    else if (param.name == "shoes") {
+      // console.log(ShoeJson);
+      setData(ShoeJson);
+
+    }
+         setQun(param.qu);
+         setPri(param.pr)
+
     })
-    setTot(tot);
-  })
+ 
   function nav() {
-    setCart([]);
     navv("/orderplace");
   }
   return (
@@ -70,16 +95,21 @@ export default function Buynow({ cartData , setCart}) {
                     </thead>
                     <tbody>
                       {
-                        cartData.map((data, index) => (
-
+                        data.map((data) => (
+                            param.no==data.id ?
+                            <>
                           <tr>
-                            <td className=''>{index + 1}</td>
+                            <td className=''>{1}</td>
                             <td className=''>{data.product_title}</td>
                             <td ><img src={data.product_image} alt="" width={"50px"} className='rounded' /></td>
-                            <td>{data.product_quantity}</td>
-                            <td className='text-info '>₹ {(data.product_price) * (data.product_quantity)}</td>
+                            <td>{param.qu}</td>
+                            <td className='text-info '>₹ {(data.product_price) * (qun)}</td>
 
                           </tr>
+                          </>
+                          :
+                          <>
+                          </>
 
                         ))
 
@@ -89,7 +119,7 @@ export default function Buynow({ cartData , setCart}) {
                 </div >
                 <div className='pdiv text-center mt-5'>
 
-                  <h1 className='fs-1 text-light'>Total = ₹   {atot}</h1>
+                  <h1 className='fs-1 text-light'>Total = ₹ {(price)*(qun)}</h1>
                   <button type="button" onClick={nav} className='btn btn-primary mt-5 btn-lg text-light px-5 fs-3'>Place Order</button>
                 </div>
               </div>

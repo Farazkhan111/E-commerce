@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import JeanJson from './jsonData/JeanJson'
 import ShirtData from './jsonData/ShirtJson'
 import ShoeJson from './jsonData/ShoeJson'
@@ -32,7 +32,7 @@ export default function Showp({addToCart}) {
     }
   })
   function less() {
-    if (qun > 1) {
+    if (data.product_quantity > 1) {
       setQun(qun - 1);
     }
     else {
@@ -46,6 +46,7 @@ export default function Showp({addToCart}) {
     else {
       setQun(1);
     }
+    
   }
   return (
     <div className='dpage container-fluid'>
@@ -108,7 +109,7 @@ export default function Showp({addToCart}) {
                       <button className='btn btn-warning text-light btn-lg ' onClick={()=>addToCart(Product)}>Add to Cart</button>
                     </div>
                     <div className='dbox4 col-6'>
-                      <button className='btn btn-info text-light btn-lg'>Buy Now</button>
+                    <Link to={"/buynow2/"+param.name+"/"+Product.id+"/"+Product.product_price+"/"+qun}> <button className='btn btn-info text-light btn-lg'>Buy Now</button></Link>
                     </div>
                   </div>
                   <div className="des mt-4 ">

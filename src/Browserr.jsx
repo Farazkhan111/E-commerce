@@ -7,10 +7,11 @@ import Showp from './Showp'
 import Cart from './Cart'
 import Buynow from './Buynow'
 import Orderplace from './Orderplace'
+import Buynow2 from './Buynow2'
 export default function Browserr() {
 
   const [cartData, setCart] = useState([]);
-
+  
   const addToCart = (data) => {
 
     var available = false;
@@ -40,8 +41,9 @@ export default function Browserr() {
           <Route path='/products/:name' element={<Products addToCart={addToCart} />} />
           <Route path='/showp/:name/:no' element={<Showp addToCart={addToCart}/>} />
           <Route path='/cart' element={<Cart cartData={cartData} setCart={setCart} />} />
-          <Route path='/buynow' element={<Buynow cartData={cartData}/>}/>
+          <Route path='/buynow' element={<Buynow cartData={cartData} setCart={setCart}/>}/>
           <Route path='/orderplace' element={<Orderplace/>}/>
+          <Route path='/buynow2/:name/:no/:pr/:qu' element={<Buynow2/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
