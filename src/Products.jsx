@@ -43,21 +43,22 @@ export default function Products({addToCart}) {
                                 <img className='pimg ' src={Products.product_image} alt="" />
                                 <h1>{Products.product_name}</h1>
                             </div> */}
-                            <div className="pcard card ">
-                                <img src={Products.product_image} alt="" className='card-img-top' height="400px" />
+                            <Link to={"/showp/"+param.name+"/"+Products.id} className='text-decoration-none'> <div className="pcard card ">
+                                 <img src={Products.product_image} alt="" className='card-img-top' height="400px" />
                                 <div className="card-body text-center">
                                     <h5 className='card-title text-light mt-2'>{Products.product_title}</h5>
                                     <h6 className='card-text  text-danger mt-3'>₹{Products.product_price}</h6>
                                     <div className="prow2 row mt-3">
-                                        <div className="col-6">
+                                        <div className="col-12">
                                             <button className='btn btn-warning text-light mt-2 ' onClick={()=>addToCart(Products)}>Add to cart</button>
                                         </div>
-                                        <div className="col-6">
+                                        {/* <div className="col-6">
                                             <Link to={"/showp/"+param.name+"/"+Products.id} className="btn btn-info mt-2" >Details</Link>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     ))
                 }

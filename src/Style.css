@@ -262,14 +262,17 @@ a{
     background: #000 !important;
     box-shadow: 2px 7px 13px 0px  whitesmoke;
     box-shadow: none;
+    /* text-decoration: none; */
     
     transform: scale(0.9);
 }
 .pcard:hover{
     background-color: gray !important;
-    transition: 2s;
-    transform: scale(1);
+    transition: 1s;
 
+}
+.pcard::selection{
+     background-color: gray !important;
 }
 .pimg{
     height: 400px;
