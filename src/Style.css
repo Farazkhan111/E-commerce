@@ -259,25 +259,30 @@ a{
 .pcard{
     height: 550px !important;
     margin-bottom: 40px;
-    background: #000 !important;
+    /* background: #000 !important; */
     box-shadow: 2px 7px 13px 0px  whitesmoke;
     box-shadow: none;
     /* text-decoration: none; */
+     transform: scale(0.9);
+     overflow: hidden;
     
-    transform: scale(0.9);
 }
 .pcard:hover{
-    background-color: gray !important;
+    /* background-color: gray !important; */
+    transition: 2s;
+    margin-top: -10px !important;
+    
+}
+.pcard:hover .ximg{
     transition: 1s;
+    transform: scale(1.1);
 
 }
-.pcard::selection{
-     background-color: gray !important;
-}
-.pimg{
-    height: 400px;
-    background-size: cover;
+
+.ximg{
+   
     transition: 2s;
+     transform: scale(0.99);
 }
 .prow{
     padding-top: 89px;

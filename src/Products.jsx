@@ -43,8 +43,8 @@ export default function Products({addToCart}) {
                                 <img className='pimg ' src={Products.product_image} alt="" />
                                 <h1>{Products.product_name}</h1>
                             </div> */}
-                            <Link to={"/showp/"+param.name+"/"+Products.id} className='text-decoration-none'> <div className="pcard card ">
-                                 <img src={Products.product_image} alt="" className='card-img-top' height="400px" />
+                            <Link to={"/showp/"+param.name+"/"+Products.id} className='text-decoration-none'> <div className="pcard card bg-dark ">
+                                 <img src={Products.product_image} alt="" className='card-img-top ximg' height="400px" />
                                 <div className="card-body text-center">
                                     <h5 className='card-title text-light mt-2'>{Products.product_title}</h5>
                                     <h6 className='card-text  text-danger mt-3'>₹{Products.product_price}</h6>
