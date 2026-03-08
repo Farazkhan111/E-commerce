@@ -17,7 +17,7 @@ export default function Browserr() {
     var available = false;
 
     cartData.forEach((myData) => {
-      if (myData.product_name == data.product_name) {
+      if (myData.product_name === data.product_name) {
         available = true;
       }
     });

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Style2.css'
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 export default function Buynow({ cartData , setCart}) {
 
   const [atot, setTot] = useState(0);

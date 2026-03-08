@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './Style2.css'
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom';
 import JeanJson from './jsonData/JeanJson'
 import ShirtData from './jsonData/ShirtJson'
 import ShoeJson from './jsonData/ShoeJson'
 import TshirtJson from './jsonData/TshirtJson'
-import Sub from './Sub'
 export default function Buynow2() {
     const param=useParams();
     const [data, setData] = useState([]);
@@ -14,27 +13,27 @@ export default function Buynow2() {
    
   var navv = useNavigate();
   useEffect(() => {
-     if (param.name == "shirts") {
+     if (param.name === "shirts") {
       // console.log(ShirtData);
       setData(ShirtData);
     }
-    else if (param.name == "t-shirts") {
+    else if (param.name === "t-shirts") {
       // console.log(TshirtJson);
       setData(TshirtJson);
 
     }
-    else if (param.name == "jeans") {
+    else if (param.name === "jeans") {
       // console.log(JeanJson);
       setData(JeanJson);
 
     }
-    else if (param.name == "shoes") {
+    else if (param.name === "shoes") {
       // console.log(ShoeJson);
       setData(ShoeJson);
 
     }
          setQun(param.qu);
-         setPri(param.pr)
+         setPri(param.pr);
 
     })
  
@@ -96,7 +95,7 @@ export default function Buynow2() {
                     <tbody>
                       {
                         data.map((data) => (
-                            param.no==data.id ?
+                            param.no===data.id ?
                             <>
                           <tr>
                             <td className=''>{1}</td>
