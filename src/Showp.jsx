@@ -9,8 +9,8 @@ export default function Showp({addToCart}) {
   const param = useParams();
   const [data, setData] = useState([]);
   const [qun, setQun] = useState(1)
- const { name } = param // Destructure name directly
-
+  const { name } = param // Destructure name directly
+ const no = parseInt(param.no);
 useEffect(() => {
   if (name === "shirts") {
     setData(ShirtData);
@@ -45,7 +45,7 @@ useEffect(() => {
       <div className="row">
         {
           data.map((Product) => (
-            param.no === Product.id ?
+            no === Product.id ?
               <>
                 <div className='col-md-6 text-center '>
                   <img className="dimg img-fluid rounded-5" src={Product.product_image} alt="" />
