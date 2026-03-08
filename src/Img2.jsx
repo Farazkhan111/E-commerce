@@ -1,5 +1,4 @@
-import react from 'react'
-import React from 'react'
+
 
 export default function Img2() {
   // react.lazy()
