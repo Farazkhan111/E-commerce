@@ -35,7 +35,7 @@ export default function Buynow2() {
          setQun(param.qu);
          setPri(param.pr);
 
-    })
+    }, [param.name, param.qu, param.pr])
  
   function nav() {
     navv("/orderplace");

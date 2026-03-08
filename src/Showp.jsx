@@ -9,28 +9,19 @@ export default function Showp({addToCart}) {
   const param = useParams();
   const [data, setData] = useState([]);
   const [qun, setQun] = useState(1)
+ const { name } = param // Destructure name directly
 
-  useEffect(() => {
-    if (param.name == "shirts") {
-      // console.log(ShirtData);
-      setData(ShirtData);
-    }
-    else if (param.name == "t-shirts") {
-      // console.log(TshirtJson);
-      setData(TshirtJson);
-
-    }
-    else if (param.name == "jeans") {
-      // console.log(JeanJson);
-      setData(JeanJson);
-
-    }
-    else if (param.name == "shoes") {
-      // console.log(ShoeJson);
-      setData(ShoeJson);
-
-    }
-  })
+useEffect(() => {
+  if (name === "shirts") {
+    setData(ShirtData);
+  } else if (name === "t-shirts") {
+    setData(TshirtJson);
+  } else if (name === "jeans") {
+    setData(JeanJson);
+  } else if (name === "shoes") {
+    setData(ShoeJson);
+  }
+}, [name]);
   function less() {
     if (data.product_quantity > 1) {
       setQun(qun - 1);
@@ -54,7 +45,7 @@ export default function Showp({addToCart}) {
       <div className="row">
         {
           data.map((Product) => (
-            param.no == Product.id ?
+            param.no === Product.id ?
               <>
                 <div className='col-md-6 text-center '>
                   <img className="dimg img-fluid rounded-5" src={Product.product_image} alt="" />

@@ -5,13 +5,14 @@ export default function Buynow({ cartData , setCart}) {
 
   const [atot, setTot] = useState(0);
   var navv = useNavigate();
-  useEffect(() => {
-    var tot = 0;
+    useEffect(() => {
+    let tot = 0; // Use 'let' instead of 'var' for better practice
     cartData.forEach((tcart) => {
       tot += (tcart.product_price * tcart.product_quantity);
-    })
+    });
     setTot(tot);
-  })
+  }, [cartData]); // <--- Adding this array fixes the build error
+
   function nav() {
     setCart([]);
     navv("/orderplace");
